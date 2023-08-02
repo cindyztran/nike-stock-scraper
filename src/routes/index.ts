@@ -1,9 +1,12 @@
 import { Router as expressRouter } from "express";
-import General from "./general.routes";
+import GeneralRoute from "./general.routes";
 import PuppeteerRoute from "./puppeteer.routes";
+import GmailRoute from "./gmail.routes";
 
 const router = expressRouter();
 
-router.use("/", General);
+router.use("/", GeneralRoute);
 router.use("/puppeteer", PuppeteerRoute);
+router.use("/gmail", GmailRoute);
+
 export default router;
