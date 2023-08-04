@@ -1,0 +1,33 @@
+name: Build Function
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
+      - name: Install
+        run: |
+          yarn install
+      - name: Lint
+        run: |
+          yarn lint
+      - name: Register Service Account
+        run: |
+          touch sa.json
+          echo '${{ secrets.SERVICE_ACCOUNT }}' >> sa.json
+      - name: Build
+        run: |
+          export NODE_ENV=production
+          sudo npm install -g firebase-tools
+      - name: Deploy
+        run: |
+          gcloud functions deploy nike-stock-scraper
