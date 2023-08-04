@@ -3,7 +3,7 @@ name: Build Function
 on:
   push:
     branches:
-      - "main"
+      - "master"
 
 jobs:
   build:
@@ -24,10 +24,6 @@ jobs:
         run: |
           touch sa.json
           echo '${{ secrets.SERVICE_ACCOUNT }}' >> sa.json
-      - name: Build
-        run: |
-          export NODE_ENV=production
-          sudo npm install -g firebase-tools
       - name: Deploy
         run: |
           gcloud functions deploy nike-stock-scraper
