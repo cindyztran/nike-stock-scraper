@@ -28,10 +28,12 @@ jobs:
           export_default_credentials: true
       - name: Register Service Account
         run: |
+          touch sa.json
           echo '${{ secrets.SERVICE_ACCOUNT }}' > sa.json
       - name: Auth with gcloud
         run: |
           gcloud auth activate-service-account --key-file=sa.json
       - name: Deploy
         run: |
+          cd lib
           gcloud functions deploy nike-stock-scraper --runtime nodejs18 --trigger-http --allow-unauthenticated
