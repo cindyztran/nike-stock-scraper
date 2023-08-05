@@ -35,5 +35,4 @@ jobs:
           gcloud auth activate-service-account --key-file=sa.json
       - name: Deploy
         run: |
-          cd lib
           gcloud functions deploy nike-stock-scraper --runtime nodejs18 --trigger-http --allow-unauthenticated
