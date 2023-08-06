@@ -17,7 +17,6 @@
     "dev": "tsc-watch --noClear --onFirstSuccess \"firebase emulators:start --only functions\""
   },
   "dependencies": {
-    "@google-cloud/functions-framework": "^3.3.0",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "dotenv": "^16.3.1",
@@ -32,7 +31,6 @@
     "typescript": "^5.1.6"
   },
   "devDependencies": {
-    "@google-cloud/functions-framework": "^3.3.0",
     "@types/express": "^4.17.17",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
