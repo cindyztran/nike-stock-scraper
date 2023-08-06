@@ -14,7 +14,7 @@ const sendEmail = async ({
   message: string;
 }) => {
   // Configure a JWT auth client
-  let jwtClient = new google.auth.JWT(
+  const jwtClient = new google.auth.JWT(
     credentials.client_email,
     credentials,
     credentials.private_key,
@@ -22,8 +22,8 @@ const sendEmail = async ({
     process.env.SUBJECT_EMAIL_ADDRESS
   );
 
-  //authenticate request
-  jwtClient.authorize(function (err, tokens) {
+  // authenticate request
+  jwtClient.authorize(function (err) {
     if (err) {
       console.log({ err });
       return;
