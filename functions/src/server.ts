@@ -2,8 +2,8 @@ import express from "express";
 import BaseRouter from "./routes";
 import * as admin from "firebase-admin";
 import { credentials } from "./utils/gmail";
-
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 

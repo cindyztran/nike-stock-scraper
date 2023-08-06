@@ -54,14 +54,14 @@ const sendEmail = async ({
   }
 };
 
-function createMessage({
+const createMessage = ({
   from,
   to,
   subject,
   message,
 }: {
   [key: string]: string;
-}) {
+}) => {
   const email = [
     `From: ${from}`,
     `To: ${to}`,
@@ -72,7 +72,7 @@ function createMessage({
   ].join("\r\n");
 
   return email;
-}
+};
 
 export default {
   sendEmail,
