@@ -1,5 +1,5 @@
 # Compiled JavaScript files
-# lib/**/*.js
+lib/**/*.js
 lib/**/*.js.map
 
 # TypeScript v1 declaration files
@@ -14,4 +14,7 @@ node_modules/
 #service account
 sa.json
 
+#environment variables
 .env
+
+lib

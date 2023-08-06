@@ -1,8 +1,15 @@
 import express from "express";
 import BaseRouter from "./routes";
+import * as admin from "firebase-admin";
+import { credentials } from "./utils/gmail";
+
 require("dotenv").config();
 
 const app = express();
+
+admin.initializeApp({
+  credential: admin.credential.cert(credentials),
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

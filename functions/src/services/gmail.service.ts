@@ -1,6 +1,7 @@
 import { google } from "googleapis";
 import { credentials } from "../utils/gmail";
 
+console.log({ credentials });
 const sendEmail = async ({
   from,
   to,
