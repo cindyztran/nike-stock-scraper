@@ -8,13 +8,6 @@ typings/
 # Node.js dependency directory
 node_modules/
 
-#puppeteer cache
-.cache
-
-#service account
 sa.json
-
-#environment variables
-.env
 
 lib

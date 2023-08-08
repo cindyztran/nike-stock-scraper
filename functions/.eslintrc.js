@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 module.exports = {
   root: true,
   env: {
@@ -11,21 +12,19 @@ module.exports = {
     "plugin:import/typescript",
     "google",
     "plugin:@typescript-eslint/recommended",
-    "eslint-config-prettier",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: ["tsconfig.json", "tsconfig.dev.json"],
+    project: ["functions/tsconfig.json", "functions/tsconfig.dev.json"],
     sourceType: "module",
   },
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
   ],
-  plugins: ["@typescript-eslint", "import", "eslint-plugin-prettier"],
+  plugins: ["@typescript-eslint", "import"],
   rules: {
+    quotes: ["error", "double"],
     "import/no-unresolved": 0,
-    "@typescript-eslint/no-explicit-any": 0,
-    // 'prettier/prettier': ['error'],
+    indent: ["error", 2],
   },
 };
