@@ -27,7 +27,8 @@ const getStock = async () => {
         from: process.env.SUBJECT_EMAIL_ADDRESS as string,
         to: process.env.TEST_EMAIL as string,
         subject: "Nike Air Monarch IV Size Restock!",
-        message: `<h1>Hello, the shoe size has been restocked!</h1><br/><a href=${link}>Go to page</a>`,
+        // eslint-disable-next-line max-len
+        message: `<h1>Hello, the size has been restocked!</h1><br/><a href=${link}>Go to page</a>`,
       });
     }
   } catch (err: any) {

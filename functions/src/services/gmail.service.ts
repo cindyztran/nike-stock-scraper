@@ -23,6 +23,7 @@ const sendEmail = async ({
   );
 
   // authenticate request
+  // eslint-disable-next-line space-before-function-paren
   jwtClient.authorize(function (err) {
     if (err) {
       console.log({ err });
