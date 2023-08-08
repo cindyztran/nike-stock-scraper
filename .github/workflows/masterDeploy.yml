@@ -22,12 +22,6 @@ jobs:
         run: |
           cd functions
           yarn lint
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.2.1
-        with:
-          project_id: nike-stock-scraper
-          service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
-          export_default_credentials: true
       - name: Register Service Account
         run: |
           cd functions
