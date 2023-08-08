@@ -14,7 +14,7 @@
     "dev": "tsc-watch --noClear --onFirstSuccess \"firebase emulators:start --only functions\""
   },
   "engines": {
-    "node": "16"
+    "node": "18"
   },
   "main": "lib/index.js",
   "dependencies": {
